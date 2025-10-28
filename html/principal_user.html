@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Restaurantes y Platos</title>
+    <link rel="stylesheet" href="../styles/principal_user.css">
+</head>
+<body>
+    <header class="encabezado-principal">
+        <div class="contenedor-header">
+            <div class="seccion-logo">
+                <img src="../IMG/logo.png" alt="Logo de la aplicación" class="logo-principal">
+            </div>
+            <div class="seccion-bienvenida">
+                <h1 class="mensaje-bienvenida">¡Bienvenido, <span id="nombreUsuario">Usuario</span>!</h1>
+                <p class="subtitulo-bienvenida">Descubre los mejores restaurantes y platos de la ciudad</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navegacion-principal">
+        <div class="contenedor-navegacion">
+            <button class="boton-navegacion activo" id="btnRestaurantes" data-seccion="restaurantes">
+                <span class="texto-nav">Restaurantes</span>
+            </button>
+            <button class="boton-navegacion" id="btnPlatos" data-seccion="platos">
+                <span class="texto-nav">Platos</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="contenido-principal">
+        <div class="contenedor-principal">
+            
+            <section class="seccion-contenido activa" id="seccionRestaurantes">
+                <div class="encabezado-seccion">
+                    <h2 class="titulo-seccion">Restaurantes Disponibles</h2>
+                    <div class="filtros-container">
+                        <select class="filtro-categoria" id="filtroRestaurantes">
+                            <option value="todos">Todas las categorías</option>
+                            <option value="italiana">Comida Italiana</option>
+                            <option value="mexicana">Comida Mexicana</option>
+                            <option value="americana">Comida Americana</option>
+                            <option value="asiatica">Comida Asiática</option>
+                            <option value="postres">Postres y Dulces</option>
+                            <option value="vegetariana">Vegetariana</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid-contenido" id="gridRestaurantes">
+                    <!-- Restaurante 1 -->
+                    <div class="tarjeta-item" data-categoria="italiana">
+                        <div class="imagen-container">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=250&fit=crop&crop=center" alt="Pasta Roma" class="imagen-item">
+                            <div class="overlay-item">
+                                <button class="boton-ver-detalle">Ver Restaurante</button>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <h3 class="nombre-item">Pasta Roma</h3>
+                            <p class="descripcion-item">Auténtica cocina italiana con pasta fresca y ingredientes importados desde Italia</p>
+                            <div class="detalles-item">
+                                <span class="calificacion">⭐ 4.8</span>
+                                <span class="categoria-tag">Italiana</span>
+                                <span class="tiempo-entrega">🕒 25-30 min</span>
+                            </div>
+                            <div class="acciones-item">
+                                <button class="boton-ver-menu">Visualizar</button>
+                                <button class="boton-ver-resenas">Ver Reseñas</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="seccion-contenido" id="seccionPlatos" style="display: none;">
+                <div class="encabezado-seccion">
+                    <h2 class="titulo-seccion">Platos Disponibles</h2>
+                    <div class="filtros-container">
+                        <select class="filtro-categoria" id="filtroPlatos">
+                            <option value="todos">Todas las categorías</option>
+                            <option value="entradas">Entradas</option>
+                            <option value="principales">Platos Principales</option>
+                            <option value="postres">Postres</option>
+                            <option value="bebidas">Bebidas</option>
+                            <option value="ensaladas">Ensaladas</option>
+                            <option value="pizzas">Pizzas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid-contenido" id="gridPlatos">
+                    <div class="tarjeta-item" data-categoria="pizzas">
+                        <div class="imagen-container">
+                            <img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=400&h=250&fit=crop&crop=center" alt="Pizza Margarita" class="imagen-item">
+                            <div class="overlay-item">
+                                <button class="boton-ver-detalle">Ver Detalles</button>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <h3 class="nombre-item">Pizza Margarita</h3>
+                            <p class="descripcion-item">Pizza clásica napolitana con tomate San Marzano, mozzarella di bufala y albahaca fresca</p>
+                            <div class="detalles-item">
+                                <span class="calificacion">⭐ 4.8</span>
+                                <span class="categoria-tag">Pizza</span>
+                                <span class="precio">💰 $18.99</span>
+                            </div>
+                            <div class="acciones-item">
+                                <button class="boton-ver-resenas">Ver Reseñas</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Modal de Reseñas -->
+    <div id="modalResenas" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="tituloModal">Reseñas de Restaurante/Plato</h2>
+                <button class="boton-cerrar-modal" id="cerrarModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="resenas-container" id="resenasContainer">
+                    <!-- Las reseñas se cargarán dinámicamente aquí -->
+                </div>
+                <div class="acciones-modal">
+                    <button class="boton-crear-resena" id="btnCrearResena">Crear Reseña</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Crear Reseña -->
+    <div id="modalCrearResena" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear Nueva Reseña</h2>
+                <button class="boton-cerrar-modal" id="cerrarModalCrear">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="formCrearResena" class="form-resena">
+                    <div class="campo-form">
+                        <label for="nombreUsuarioResena">Tu nombre:</label>
+                        <input type="text" id="nombreUsuarioResena" required>
+                    </div>
+                    <div class="campo-form">
+                        <label for="calificacionResena">Calificación:</label>
+                        <div class="estrellas-container">
+                            <span class="estrella" data-rating="1">☆</span>
+                            <span class="estrella" data-rating="2">☆</span>
+                            <span class="estrella" data-rating="3">☆</span>
+                            <span class="estrella" data-rating="4">☆</span>
+                            <span class="estrella" data-rating="5">☆</span>
+                        </div>
+                        <input type="hidden" id="calificacionResena" required>
+                    </div>
+                    <div class="campo-form">
+                        <label for="comentarioResena">Tu reseña:</label>
+                        <textarea id="comentarioResena" rows="4" placeholder="Escribe tu experiencia aquí..." required></textarea>
+                    </div>
+                    <div class="acciones-form">
+                        <button type="button" class="boton-cancelar" id="cancelarResena">Cancelar</button>
+                        <button type="submit" class="boton-enviar">Enviar Reseña</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
