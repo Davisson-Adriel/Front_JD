@@ -22,9 +22,6 @@
 /*          ESTILOS COMUNES (LOGIN Y REGISTRO)     */
 /* ============================================= */
 
-
-
-
 * {
     margin: 0;
     padding: 0;
@@ -32,7 +29,7 @@
 }
 
 #inicio_sesion {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
     background: radial-gradient(circle, #fed87b 0%, #4e433e 100%);
     min-height: 100vh;
     display: flex;
@@ -285,7 +282,7 @@
 }
 
 .nav-toggle {
-    display: none; /* Ocultamos los radio buttons */
+    display: none;
 }
 
 .boton-navegacion {
@@ -299,7 +296,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    display: inline-block; /* Necesario para que el label se comporte como bloque */
+    display: inline-block;
 }
 
 .nav-toggle:checked + .boton-navegacion {
@@ -335,12 +332,126 @@
     font-family: 'Montserrat', sans-serif;
     transition: all 0.3s ease;
     border: 2px solid #fed87b; 
-    box-shadow: 0 0 5px #fed87b,
-                0 0 10px #fed87b; 
+    box-shadow: 0 0 5px #fed87b, 0 0 10px #fed87b; 
 }
 
 .filtro-categoria:focus {
     box-shadow: 0 0 5px #fed87b, 0 0 15px #fed87b, 0 0 25px #fed87b; 
+}
+
+.grid-contenido {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 450px);
+    justify-content: center;
+    gap: 2rem;
+    padding: 1%;
+}
+
+.tarjeta-item {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.imagen-container {
+    position: relative;
+    width: 100%;
+    padding-top: 62.5%;
+    overflow: hidden;
+}
+
+.imagen-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.info-item {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.nombre-item {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.descripcion-item {
+    font-family: 'Open Sans', sans-serif;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.detalles-item {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #4e433e;
+    font-weight: bold;
+    text-align: right;
+}
+
+.calificacion {
+    background-color: rgb(116, 255, 95);
+    padding: 1%;
+    border-radius: 20px;
+}
+
+.categoria-tag {
+    background-color: rgb(255, 255, 147);
+    padding: 2%;
+    border-radius: 20px;
+}
+
+.tiempo-entrega {
+    background-color: rgb(97, 226, 255);
+    padding: 2%;
+    border-radius: 20px;
+}
+
+.acciones-item {
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.boton-ver-menu {
+    background-color: #4e433e;
+    color: white;
+    width: 100%;
+    font-family: "Montserrat";
+    padding: 2%;
+}
+
+.boton-ver-resenas {
+    background-color: white;
+    padding: 2%;
+    width: 100%;
+    font-family: "Montserrat";
 }
 
 /* ============================================= */
