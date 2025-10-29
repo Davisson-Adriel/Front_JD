@@ -31,7 +31,7 @@
     box-sizing: border-box;
 }
 
-body {
+#inicio_sesion {
     font-family: Arial, sans-serif;
     background: radial-gradient(circle, #fed87b 0%, #4e433e 100%);
     min-height: 100vh;
@@ -238,6 +238,109 @@ body {
 
 .boton-crear-cuenta:active {
     transform: translateY(0);
+}
+
+/* ============================================= */
+/*       ESTILOS PÁGINA DE INICIO | USUARIO   */
+/* ============================================= */
+
+.contenedor-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1%;
+    background: linear-gradient(to right, #4e433e, #fed87b);
+    border-bottom: 1px solid #e9ecef;
+}
+
+#logo-principal {
+    max-width: 200px;
+    width: 30%;
+}
+
+.seccion-bienvenida {
+    text-align: right;
+}
+
+.mensaje-bienvenida {
+    font-family: 'Montserrat';
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.subtitulo-bienvenida {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.contenedor-navegacion {
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-toggle {
+    display: none; /* Ocultamos los radio buttons */
+}
+
+.boton-navegacion {
+    background-color: transparent;
+    color: #4e433e;
+    border: 2px solid #4e433e;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Necesario para que el label se comporte como bloque */
+}
+
+.nav-toggle:checked + .boton-navegacion {
+    background-color: #b59017; 
+    color: #ffffff; 
+}
+
+.boton-navegacion:hover {
+    background-color: #fdf2d7; 
+}
+
+.encabezado-seccion {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #3e4e4b;
+    margin-bottom: 15px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.filtro-categoria {
+    background-color: #ffffff;
+    color: #000000; 
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    border: 2px solid #fed87b; 
+    box-shadow: 0 0 5px #fed87b,
+                0 0 10px #fed87b; 
+}
+
+.filtro-categoria:focus {
+    box-shadow: 0 0 5px #fed87b, 0 0 15px #fed87b, 0 0 25px #fed87b; 
 }
 
 /* ============================================= */

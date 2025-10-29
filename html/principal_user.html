@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Restaurantes y Platos</title>
-    <link rel="stylesheet" href="../styles/principal_user.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
-<body>
+<body id="home_usuario">
     <header class="encabezado-principal">
         <div class="contenedor-header">
             <div class="seccion-logo">
-                <img src="../IMG/logo.png" alt="Logo de la aplicación" class="logo-principal">
+                <img src="../IMG/logo.png" alt="Logo de la aplicación" id="logo-principal">
             </div>
             <div class="seccion-bienvenida">
                 <h1 class="mensaje-bienvenida">¡Bienvenido, <span id="nombreUsuario">Usuario</span>!</h1>
@@ -21,12 +21,11 @@
 
     <nav class="navegacion-principal">
         <div class="contenedor-navegacion">
-            <button class="boton-navegacion activo" id="btnRestaurantes" data-seccion="restaurantes">
-                <span class="texto-nav">Restaurantes</span>
-            </button>
-            <button class="boton-navegacion" id="btnPlatos" data-seccion="platos">
-                <span class="texto-nav">Platos</span>
-            </button>
+            <input type="radio" id="toggleRestaurantes" name="nav-toggle" class="nav-toggle" checked>
+            <label for="toggleRestaurantes" class="boton-navegacion">Restaurantes</label>
+
+            <input type="radio" id="togglePlatos" name="nav-toggle" class="nav-toggle">
+            <label for="togglePlatos" class="boton-navegacion">Platos</label>
         </div>
     </nav>
 
@@ -172,5 +171,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>
